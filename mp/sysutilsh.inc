@@ -1,0 +1,11 @@
+function IntToHex(Value: Longint; Digits: integer): string; overload;
+function IntToHex(Value: Int64; Digits: integer): string; overload;
+function IntToHex(Value: QWord; Digits: integer): string; {$ifdef SYSUTILSINLINE}inline;{$ENDIF} overload;
+function IntToHex(Value: Int8): string; {$ifdef SYSUTILSINLINE}inline;{$ENDIF} overload;
+function IntToHex(Value: UInt8): string; {$ifdef SYSUTILSINLINE}inline;{$ENDIF} overload;
+function IntToHex(Value: Int16): string; {$ifdef SYSUTILSINLINE}inline;{$ENDIF} overload;
+function IntToHex(Value: UInt16): string; {$ifdef SYSUTILSINLINE}inline;{$ENDIF} overload;
+function IntToHex(Value: Int32): string; {$ifdef SYSUTILSINLINE}inline;{$ENDIF} overload;
+function IntToHex(Value: UInt32): string; {$ifdef SYSUTILSINLINE}inline;{$ENDIF} overload;
+function IntToHex(Value: Int64): string; {$ifdef SYSUTILSINLINE}inline;{$ENDIF} overload;
+function IntToHex(Value: UInt64): string; {$ifdef SYSUTILSINLINE}inline;{$ENDIF} overload;
