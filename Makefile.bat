@@ -4,13 +4,14 @@ set TEST_FOLDER=%~dp0
 set TARGET_FOLDER=%~dp0
 set FPC_FOLDER=C:\jac\system\Windows\Programming\Repositories\fpc
 set FPC_BIN_FOLDER=%FPC_FOLDER%\compiler
+rem The build folder contains Jasmin and other Java tools
+set FPC_BUILD_FOLDER=%FPC_FOLDER%\build
+set PATH=%FPC_BIN_FOLDER%;%FPC_BUILD_FOLDER%;%PATH%
+
 set FPC_UNITS_FOLDER=%FPC_FOLDER%\rtl\units
 set FPC_RTL_INC_FOLDER=%FPC_FOLDER%\rtl\inc
 set FPC_RTL_JAVA_FOLDER=%FPC_FOLDER%\rtl\java
 set FPC_RTL_JVM_FOLDER=%FPC_FOLDER%\rtl\jvm
-
-set JASMIN_FOLDER=C:\jac\system\Windows\Programming\Repositories\fpc\build
-set PATH=%FPC_BIN_FOLDER%;%JASMIN_FOLDER%;%PATH%
 
 echo Using PPCJVM version 
 ppcjvm -iV
@@ -18,7 +19,6 @@ echo Unit folder %FPC_UNIT_FOLDER%
 rem dir /b %FPC_UNIT_FOLDER%\*.*
 
 cd %TEST_FOLDER%
-pushd test
 
 goto :fast
 call :compile minimal minimal.pp 
@@ -34,7 +34,6 @@ if not "%ERROR%"=="" goto:eof
 call :compile mads mads.pas
 if not "%ERROR%"=="" goto:eof
 
-popd
 goto :eof
 
 rem
