@@ -46,7 +46,7 @@ set SOURCE_FILE_NAME=%2
 
 set VERBOSE=h
 set VERBOSE=0
-set UNIT_FILE_NAME=Crt.pp
+set VERBOSE=i
 
 pushd %FILE_NAME%
 
