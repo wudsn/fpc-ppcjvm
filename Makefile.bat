@@ -20,7 +20,7 @@ rem dir /b %FPC_UNIT_FOLDER%\*.*
 
 cd %TEST_FOLDER%
 
-goto :fast
+rem goto :fast
 call :compile minimal minimal.pp 
 if not "%ERROR%"=="" goto:eof
 
@@ -56,7 +56,7 @@ if exist *.ppu del *.ppu
 
 
 set FPC_TARGET=i386-win32
-goto :use_ppcjvm
+rem goto :use_ppcjvm
 
 rem
 rem FPC
@@ -89,7 +89,7 @@ set COMPILER=ppcjvm
 echo INFO: Compiling %SOURCE_FILE_NAME% to %FILE_NAME%.class for %FPC_TARGET% with %COMPILER%.
 set FPC_UNIT_FOLDER=%FPC_UNITS_FOLDER%\%FPC_TARGET%
 
-%COMPILER% -v%VERBOSE% -Fu%FPC_UNIT_FOLDER% -Fi%FPC_RTL_INC_FOLDER% -Fi%FPC_RTL_JAVA_FOLDER% -Fi%FPC_RTL_JVM_FOLDER% -O2 -g %SOURCE_FILE_NAME%
+%COMPILER% -mDelphi -v%VERBOSE% -Fu%FPC_UNIT_FOLDER% -Fi%FPC_RTL_INC_FOLDER% -Fi%FPC_RTL_JAVA_FOLDER% -Fi%FPC_RTL_JVM_FOLDER% -O2 -g %SOURCE_FILE_NAME%
 if ERRORLEVEL 1 goto :ppc_error
 java -cp ".;%FPC_UNIT_FOLDER%" %FILE_NAME%
 echo Execution completed.
