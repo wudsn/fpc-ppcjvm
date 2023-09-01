@@ -9,10 +9,6 @@ interface
 
 implementation
 
-procedure Jac;
-begin
-end;
-
 Procedure TextColor(Color: Byte);
 { Switch foregroundcolor }
 Begin
