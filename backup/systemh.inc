@@ -1,0 +1,7 @@
+Procedure BlockWrite(var f:ByteFile;const Buf;Count:Int64;var Result:Int64);; forward;
+Procedure BlockWrite(var f:ByteFile;const Buf;Count:Longint;var Result:Longint);; forward;
+Procedure BlockWrite(var f:ByteFile;const Buf;Count:Cardinal;var Result:Cardinal);; forward;
+Procedure BlockWrite(var f:ByteFile;const Buf;Count:Word;var Result:Word);; forward;
+Procedure BlockWrite(var f:ByteFile;const Buf;Count:Word;var Result:Integer);; forward;
+Procedure BlockWrite(var f:ByteFile;const Buf;Count:Longint); forward;
+

@@ -1,0 +1,32 @@
+program minimal;
+
+{$ifdef fpc}
+  {$mode objfpc}
+{$endif}
+
+{$ifdef cpujvm}
+uses
+  {$ifdef java}jdk15{$else}androidr14{$endif};
+
+{$macro on}
+{$define writeln:=jlsystem.fout.println}
+{$define write:=jlsystem.fout.println}
+
+{$endif}
+
+var i: Integer;
+runini      : record
+               adr: integer;
+               use: Boolean;
+              end;
+begin
+  writeln('Hello FPC');
+  for i:=0 to 9 do
+  begin
+   write(i);
+  end;
+  
+  runini.adr := 1;
+  runini.use := true;
+end.
+
