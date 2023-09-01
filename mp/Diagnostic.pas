@@ -12,7 +12,8 @@ interface
 
 implementation
 
-uses SysUtils, Common;
+uses SysUtils, Common,
+  SystemJVM;
 
 // ----------------------------------------------------------------------------
 

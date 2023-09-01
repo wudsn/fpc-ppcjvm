@@ -166,7 +166,8 @@ uses
 	Windows,
 {$ENDIF}
 
-	Common, Messages, Scanner, Parser, Optimize, Diagnostic;
+	Common, Messages, Scanner, Parser, Optimize, Diagnostic,
+	SystemJVM;
 
 
 function Tab2Space(a: string; spc: byte = 8): string;

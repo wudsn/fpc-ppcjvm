@@ -14,7 +14,8 @@ interface
 
 implementation
 
-uses SysUtils, Common, Messages, SplitString;
+uses SysUtils, Common, Messages, SplitString
+  ,SystemJVM;
 
 // ----------------------------------------------------------------------------
 

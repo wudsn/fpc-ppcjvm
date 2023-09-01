@@ -637,7 +637,9 @@ var
 
 implementation
 
-uses SysUtils, Messages;
+uses SysUtils, Messages
+  ,SystemJVM
+;
 
 // ----------------------------------------------------------------------------
 
