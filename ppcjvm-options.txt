@@ -1,5 +1,5 @@
-Free Pascal Compiler version 3.3.1 [2023/08/31] for jvm
-Copyright (c) 1993-2023 by Florian Klaempfl and others
+Free Pascal Compiler version 3.3.1 [2024/05/09] for jvm
+Copyright (c) 1993-2024 by Florian Klaempfl and others
 C:\jac\system\Windows\Programming\Repositories\fpc\compiler\ppcjvm.exe [options] <inputfile> [options]
  Put + after a boolean switch option to enable it, - to disable it.
   @<x>   Read compiler options from <x> in addition to the default fpc.cfg
@@ -16,9 +16,8 @@ C:\jac\system\Windows\Programming\Repositories\fpc\compiler\ppcjvm.exe [options]
   -b     Generate browser info
       -bl        Generate local symbol info
   -B     Build all modules
-*** press enter ***
   -C<x>  Code generation options:
-      -C3        Turn on ieee error checking for constants
+      -C3        Turn on IEEE error checking for constants
       -Ca<x>     Select ABI; see fpc -i or fpc -ia for possible values
       -Cb        Generate code for a big-endian variant of the target architecture
       -Cc<x>     Set default calling convention to <x>
@@ -35,7 +34,6 @@ C:\jac\system\Windows\Programming\Repositories\fpc\compiler\ppcjvm.exe [options]
       -CO        Check for possible overflow of integer operations
       -Cp<x>     Select instruction set; see fpc -i or fpc -ic for possible values
       -CP<x>=<y>  packing settings
-*** press enter ***
          -CPPACKENUM=<y>  <y> enum packing: 0, 1, 2 and 4 or DEFAULT or NORMAL
          -CPPACKRECORD=<y>  <y> record packing: 0 or DEFAULT or NORMAL, 1, 2, 4, 8, 16 and 32
          -CPPACKSET=<y>  <y> set allocation: 0, 1 or DEFAULT or NORMAL, 2, 4 and 8
@@ -50,7 +48,6 @@ C:\jac\system\Windows\Programming\Repositories\fpc\compiler\ppcjvm.exe [options]
          -CTenumfieldinit        Initialize enumeration fields in constructors to enumtype(0), after calling inherited constructors
          -CTinitlocals           Initialize local variables that trigger a JVM bytecode verification error if used uninitialized (slows down code)
          -CTlowercaseprocstart   Lowercase the first character of procedure/function/method names
-*** press enter ***
       -Cv        Var/out parameter copy-out checking
       -CX        Create also smartlinked library
   -d<x>  Defines the symbol <x>
@@ -70,7 +67,6 @@ C:\jac\system\Windows\Programming\Repositories\fpc\compiler\ppcjvm.exe [options]
       -FD<x>     Set the directory where to search for compiler utilities
       -Fe<x>     Redirect error output to <x>
       -FE<x>     Set exe/unit output path to <x>
-*** press enter ***
       -Ff<x>     Add <x> to framework path (Darwin only), or set IDF path to <x> (Xtensa-FreeRTOS)
       -FF        Use fpcres as RC to RES compiler instead of windres or gorc
       -Fi<x>     Add <x> to include path
@@ -82,6 +78,7 @@ C:\jac\system\Windows\Programming\Repositories\fpc\compiler\ppcjvm.exe [options]
       -Fo<x>     Add <x> to object path
       -Fr<x>     Load error message file <x>
       -FR<x>     Set resource (.res) linker to <x>
+      -Ft        Do not search uppercased or 8.3 unit filenames on case sensitive filesystems.
       -Fu<x>     Add <x> to unit path
       -FU<x>     Set unit output path to <x>, overrides -FE
       -Fw<x>     Load previously stored whole-program optimization feedback from <x>
@@ -90,7 +87,6 @@ C:\jac\system\Windows\Programming\Repositories\fpc\compiler\ppcjvm.exe [options]
       -gc        Generate checks for pointers (experimental, only available on some targets, might generate false positive)
       -gh        Use heaptrace unit (for memory leak/corruption debugging)
       -gl        Use line info unit (show more info with backtraces)
-*** press enter ***
       -gm        Generate Microsoft CodeView debug information (experimental)
       -go<x>     Set debug information options
          -godwarfcpp  Simulate C++ debug information in DWARF
@@ -108,7 +104,6 @@ C:\jac\system\Windows\Programming\Repositories\fpc\compiler\ppcjvm.exe [options]
       -gw4       Generate DWARFv4 debug information (experimental)
   -i     Information
       -ia        Return list of supported ABI targets
-*** press enter ***
       -ib        Return the used code generation backend type
       -ic        Return list of supported CPU instruction sets
       -iD        Return compiler date
@@ -131,7 +126,6 @@ C:\jac\system\Windows\Programming\Repositories\fpc\compiler\ppcjvm.exe [options]
   -l     Write logo
   -M<x>  Set language mode to <x> / enable modeswitch <x> (see option -im)
       -Mdelphi   Delphi 7 compatibility mode
-*** press enter ***
       -Mdelphiunicode Delphi 2009 and later compatibility mode
       -Mextendedpascal ISO 10206 mode
       -Mfpc      Free Pascal dialect (default)
@@ -152,7 +146,6 @@ C:\jac\system\Windows\Programming\Repositories\fpc\compiler\ppcjvm.exe [options]
       -O4        Level 4 optimizations (-O3 + optimizations which might have unexpected side effects)
       -Oa<x>=<y> Set alignment
       -Oo[NO]<x> Enable or disable optimizations; see fpc -i or fpc -io for possible values
-*** press enter ***
       -Op<x>     Set target cpu for optimizing; see fpc -i or fpc -ic for possible values
       -Os        Optimize for size rather than speed
       -Ow<x>     Perform whole-program optimization <x>; see fpc -i or fpc -iw for possible values
@@ -169,7 +162,6 @@ C:\jac\system\Windows\Programming\Repositories\fpc\compiler\ppcjvm.exe [options]
       -S2        Same as -Mobjfpc
       -Sa        Turn on assertions
       -Sc        Support operators like C (*=,+=,/= and -=)
-*** press enter ***
       -Sd        Same as -Mdelphi
       -Se<x>     Error options. <x> is a combination of the following:
          <n> : Compiler halts after the <n> errors (default is 1)
@@ -189,7 +181,6 @@ C:\jac\system\Windows\Programming\Repositories\fpc\compiler\ppcjvm.exe [options]
       -So        Same as -Mtp
       -Sr        Transparent file names in ISO mode
       -Ss        Constructor name must be "Init" (destructor name must be "Done")
-*** press enter ***
       -Sv        Support vector processing (use CPU vector extensions if available)
       -Sx        Enable exception keywords (default in Delphi/ObjFPC modes)
       -Sy        @<pointer> returns a typed pointer, same as $T+
@@ -206,19 +197,28 @@ C:\jac\system\Windows\Programming\Repositories\fpc\compiler\ppcjvm.exe [options]
       -Ur        Generate release unit files (never automatically recompiled)
       -Us        Compile a system unit
   -v<x>  Be verbose. <x> is a combination of the following letters:
-      0 : Show nothing (except errors) p : Write tree.log with parse tree
-      a : Show everything              q : Show message numbers
-      b : Write file names messages    r : Rhide/GCC compatibility mode
-          with full path               s : Show time stamps
-      c : Show conditionals            t : Show tried/used files
-*** press enter ***
-      d : Show debug info              u : Show unit info
-      e : Show errors (default)        v : Write fpcdebug.txt with
-      h : Show hints                       lots of debugging info
-      i : Show general info            w : Show warnings
-      l : Show linenumbers             x : Show info about invoked tools
+      0 : Show nothing (except errors)
+      a : Show everything
+      b : Write file names messages with full path
+      c : Show conditionals
+      d : Show debug info
+      e : Show errors (default)
+      h : Show hints
+      i : Show general info
+      j : Always add main source (useful when run in parallel make)
+      l : Show linenumbers
       m<x>,<y> : Do not show messages numbered <x> and <y>
-      n : Show notes                   z : Write output to stderr
+      n : Show notes
+      p : Write tree.log with parse tree
+      q : Show message numbers
+      r : Rhide/GCC compatibility mode
+      s : Show time stamps
+      t : Show tried/used files
+      u : Show unit info
+      v : Write fpcdebug.txt with lots of debugging info
+      w : Show warnings
+      x : Show info about invoked tools
+      z : Write output to stderr
   -W<x>  Target-specific options (targets)
       -WX        Enable executable stack (Linux)
   -x<suff> Set suffix for compiler executable (fpc command only)
@@ -230,7 +230,6 @@ C:\jac\system\Windows\Programming\Repositories\fpc\compiler\ppcjvm.exe [options]
       -XD        Try to link units dynamically      (defines FPC_LINK_DYNAMIC)
       -Xe        Use external linker
       -Xf        Substitute pthread library name for linking (BSD)
-*** press enter ***
       -Xg        Create debuginfo in a separate file and add a debuglink section to executable
       -Xi        Use internal linker
       -XLA       Define library substitutions for linking
@@ -247,7 +246,6 @@ C:\jac\system\Windows\Programming\Repositories\fpc\compiler\ppcjvm.exe [options]
       -Xt        Link with static libraries (-static is passed to linker)
       -Xu        Generate executable in UF2 format  (embedded targets only)
       -Xv        Generate table for Virtual Entry calls
-*** press enter ***
       -XV        Use VLink as external linker       (default on Amiga, Atari, Sinclair QL)
       -XX        Try to smartlink units             (defines FPC_LINK_SMART)
   

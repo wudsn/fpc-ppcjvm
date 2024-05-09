@@ -169,6 +169,7 @@ uses
 	Common, Messages, Scanner, Parser, Optimize, Diagnostic,
 	SystemJVM;
 
+{$INFO JAC! mp.pas}
 
 function Tab2Space(a: string; spc: byte = 8): string;
 var column, nextTabStop: integer;

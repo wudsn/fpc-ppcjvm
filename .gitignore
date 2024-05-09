@@ -3,3 +3,5 @@
 *.ppu
 *.exe
 *.class
+*.lpi
+*.lps

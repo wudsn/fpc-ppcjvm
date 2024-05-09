@@ -7,14 +7,14 @@ program minimal;
 {$ifdef cpujvm}
 uses
   {$ifdef java}jdk15{$else}androidr14{$endif}
-  ,Common,SysUtils
+  ,Common
   ;
 
 {$macro on}
 {$define writeln:=jlsystem.fout.println}
 {$define write:=jlsystem.fout.print}
 {$else}
-uses SysUtils;
+uses Crt, SysUtils;
 {$endif}
 
 

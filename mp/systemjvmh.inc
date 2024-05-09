@@ -1,4 +1,6 @@
 
+type TextFile = file of char;
+
 function FileExists(const FileName: string;  FollowLink: Boolean = True ):Boolean;
 function ChangeFileExt( const FileName: string; const Extension: string):string;
 function IncludeTrailingPathDelimiter( const Path: string):string;

@@ -211,22 +211,18 @@ const
   EOFTOK		= 199;     // MAXTOKENNAMES = 200
 
 {$INFO TEST Common.pas }
-  UnsignedOrdinalTypes: set of byte = [BYTETOK, WORDTOK, CARDINALTOK];
-  SignedOrdinalTypes: set of byte = [SHORTINTTOK, SMALLINTTOK, INTEGERTOK];
-  RealTypes: set of byte	= [SHORTREALTOK, REALTOK, SINGLETOK, HALFSINGLETOK];
+  UnsignedOrdinalTypes	= [BYTETOK, WORDTOK, CARDINALTOK];
+  SignedOrdinalTypes	= [SHORTINTTOK, SMALLINTTOK, INTEGERTOK];
+  RealTypes		= [SHORTREALTOK, REALTOK, SINGLETOK, HALFSINGLETOK];
 
-(*  IntegerTypes: set of byte	= UnsignedOrdinalTypes+SignedOrdinalTypes; *)
-  IntegerTypes: set of byte	= [BYTETOK, WORDTOK, CARDINALTOK]+[SHORTINTTOK, SMALLINTTOK, INTEGERTOK];
-(* OrdinalTypes: set of byte	= IntegerTypes + [CHARTOK, BOOLEANTOK, ENUMTOK]; *)
-  OrdinalTypes: set of byte	= [BYTETOK, WORDTOK, CARDINALTOK]+[SHORTINTTOK, SMALLINTTOK, INTEGERTOK] + [CHARTOK, BOOLEANTOK, ENUMTOK];
+  IntegerTypes		= UnsignedOrdinalTypes + SignedOrdinalTypes;
+  OrdinalTypes		= IntegerTypes + [CHARTOK, BOOLEANTOK, ENUMTOK];
 
-(*  Pointers: set of byte		= [POINTERTOK, PROCVARTOK, STRINGPOINTERTOK]; *)
-  Pointers: set of byte		= [POINTERTOK, PROCVARTOK, STRINGPOINTERTOK];
+  Pointers		= [POINTERTOK, PROCVARTOK, STRINGPOINTERTOK];
 
-(*  AllTypes: set of byte		= OrdinalTypes + RealTypes + Pointers; *)
-  AllTypes: set of byte		= [BYTETOK, WORDTOK, CARDINALTOK]+[SHORTINTTOK, SMALLINTTOK, INTEGERTOK] + [CHARTOK, BOOLEANTOK, ENUMTOK] + [SHORTREALTOK, REALTOK, SINGLETOK, HALFSINGLETOK] + [POINTERTOK, PROCVARTOK, STRINGPOINTERTOK];
+  AllTypes		= OrdinalTypes + RealTypes + Pointers;
 
-  StringTypes: set of byte		= [STRINGLITERALTOK, STRINGTOK, PCHARTOK];
+  StringTypes		= [STRINGLITERALTOK, STRINGTOK, PCHARTOK];
 
   // Identifier kind codes
 
