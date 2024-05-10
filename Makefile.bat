@@ -81,6 +81,8 @@ echo | set /P="INFO: Compiling %SOURCE_FILE_NAME% to %FILE_NAME%.exe for %FPC_TA
 
 %COMPILER% -MDelphi -v%VERBOSE% -O3 %SOURCE_FILE_NAME%
 %FILE_NAME%.exe
+set RESULT=%ERRORLEVEL% 
+echo Execution completed with error level %RESULT%.
 
 rem
 rem PPC386
@@ -98,6 +100,8 @@ echo | set /P="INFO: Compiling %SOURCE_FILE_NAME% to %FILE_NAME%.exe for %FPC_TA
 %COMPILER% -MDelphi -v%VERBOSE% -O3 -Fu%FPC_UNIT_FOLDER% -Fu%FPC_RTL_CONSOLE_FOLDER%  %SOURCE_FILE_NAME%
 if ERRORLEVEL 1 goto :ppc_error
 %FILE_NAME%.exe
+set RESULT=%ERRORLEVEL% 
+echo Execution completed with error level %RESULT%.
 
 rem
 rem PPCJVM
@@ -108,15 +112,16 @@ echo ### PPCJVM ###
 set FPC_TARGET=jvm-java
 set COMPILER=ppcjvm
 
-echo | set /P="INFO: Compiling %SOURCE_FILE_NAME% to %FILE_NAME%.exe for %FPC_TARGET% with %COMPILER% version "
+echo | set /P="INFO: Compiling %SOURCE_FILE_NAME% to %FILE_NAME%.class for %FPC_TARGET% with %COMPILER% version "
 %COMPILER% -iV
 set FPC_UNIT_FOLDER=%FPC_UNITS_FOLDER%\%FPC_TARGET%
 
 echo Unitfolder is "%FPC_UNIT_FOLDER%".
 %COMPILER% -mDelphi -v%VERBOSE% -Fu%FPC_UNIT_FOLDER% -Fi%FPC_RTL_INC_FOLDER% -Fi%FPC_RTL_JAVA_FOLDER% -Fi%FPC_RTL_JVM_FOLDER% -O2 -g %SOURCE_FILE_NAME%
 if ERRORLEVEL 1 goto :ppc_error
-java -cp ".\%FILE_NAME%\;%FPC_UNIT_FOLDER%" %FILE_NAME%
-echo Execution completed.
+java -cp ".;%FPC_UNIT_FOLDER%" %FILE_NAME%
+set RESULT=%ERRORLEVEL% 
+echo Execution completed with error level %RESULT%.
 popd
 goto :eof
 

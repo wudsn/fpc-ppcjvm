@@ -1,22 +1,13 @@
 program minimal;
 
-{$ifdef fpc}
-  {$mode objfpc}
-{$endif}
-
 {$ifdef cpujvm}
-uses
-  {$ifdef java}jdk15{$else}androidr14{$endif}
-  ,Common,SysUtils
-  ;
-
-{$macro on}
-{$define writeln:=jlsystem.fout.println}
-{$define write:=jlsystem.fout.print}
+    uses jdk15;
+	{$macro on}
+	{$define writeln:=jlsystem.fout.println}
+	{$define write:=jlsystem.fout.print}
 {$else}
-uses SysUtils;
+	uses SysUtils;
 {$endif}
-
 
 const
 AllowWhiteSpaces	: set of char = [' '];
@@ -28,12 +19,7 @@ AllowWhiteSpaces	: set of char = [' '];
   UnsignedOrdinalTypes	= [BYTETOK, WORDTOK, CARDINALTOK];
 
 
-
-
 procedure omin_spacje (var i:integer; var a:string);
-(*----------------------------------------------------------------------------*)
-(*  omijamy tzw. "biale spacje" czyli spacje, tabulatory		      *)
-(*----------------------------------------------------------------------------*)
 begin
 
  if a<>'' then
@@ -41,31 +27,49 @@ begin
 
 end;
 
+
 var i: Integer;
-runini      : record
-               adr: integer;
-               use: Boolean;
-              end;
+runini:
+	record
+		adr: integer;
+		use: Boolean;
+	end;
 ptr: pointer;
 
+
+procedure testFileAccess;
+const
+  filename = 'testfile.txt';
+
+type
+   TCharFile = file of char;
+
+var testFile: TCharFile;
+
 begin
-  writeln('Hello FPC');
-  for i:=0 to 9 do
-  begin
-   write(i);
-   write(' ');
-  end;
-  writeln();
+   (* https://wiki.freepascal.org/File_Handling_In_Pascal *)
+	// Use exceptions to catch errors (this is the default so not absolutely requried)
+	{$I+}
+
+{	AssignFile(testFile, filename); }
+
+end;
+
+begin
+	writeln('Hello FPC');
+  	for i:=0 to 9 do
+  	begin
+   		write(i);
+   		write(' '); 
+  	end;
+	writeln();
   
-  runini.adr := 1;
-  runini.use := true;
-  ptr := addr(runini);
-  writeln(format('Address: %p',[ptr]));
-(*
-  repeat
-  until not KeyPressed;
-  repeat
-  until KeyPressed;
-  *)
-end.
+	runini.adr := 1;
+	runini.use := true;
+	ptr := addr(runini);
+(*  writeln(format('Address: %p',[ptr])); *) (* Does not yet work in JVM*)
+
+    testFileAccess;
+    
+ end.
 
