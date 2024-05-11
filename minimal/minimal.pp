@@ -48,7 +48,8 @@ var testFile: TCharFile;
 
 begin
    (* https://wiki.freepascal.org/File_Handling_In_Pascal *)
-	// Use exceptions to catch errors (this is the default so not absolutely requried)
+   (* https://forum.lazarus.freepascal.org/index.php/topic,67231.0.html - PPCJVM - How to include FILEIO*)
+	// Use exceptions to catch errors (this is the default so not absolutely required)
 	{$I+}
 
 {	AssignFile(testFile, filename); }

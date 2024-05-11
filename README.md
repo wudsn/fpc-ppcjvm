@@ -9,3 +9,7 @@ file.inc
 filerec.inc
 
 see also "rtl/java/jsystem.inc"
+
+ make full TEST_FPC=path_to_your_compiler
+ make full TEST_FPC=../compiler/ppc386
+
