@@ -3,7 +3,7 @@ rem setlocal
 set TEST_FOLDER=%~dp0
 set TARGET_FOLDER=%~dp0
 set REPOSITORIES_FOLDER=C:\jac\system\Windows\Programming\Repositories
-set FPC_FOLDER=%REPOSITORIES_FOLDER%\fpc
+set FPC_FOLDER=%REPOSITORIES_FOLDER%\fpc-source
 set FPC_BIN_FOLDER=%FPC_FOLDER%\compiler
 
 rem The build folder contains Jasmin and other Java tools

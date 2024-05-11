@@ -2,7 +2,7 @@
 # https://wiki.freepascal.org/FPC_JVM/Building
 
 export REPOSITORY_FOLDER="$PWD/.."
-export FPC_FOLDER="$REPOSITORY_FOLDER/fpc"
+export FPC_FOLDER="$REPOSITORY_FOLDER/fpc-source"
 export FPC_PPCJVM_FOLDER="$REPOSITORY_FOLDER/fpc-ppcjvm"
 export PATH="$FPC_FOLDER/compiler:$FPC_PPCJVM_FOLDER/build:$PATH"
 pushd $FPC_FOLDER
